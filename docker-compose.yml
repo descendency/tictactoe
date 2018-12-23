@@ -1,0 +1,12 @@
+version: '3'
+services:
+    serv:
+        image: tictactoe-server
+        ports:
+          - "4001:4001"
+    ttt:
+        image: tictactoe-client
+        depends_on:
+          - serv
+        ports:
+          - "3000:3000"
